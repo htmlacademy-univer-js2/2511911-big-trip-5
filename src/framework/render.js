@@ -1,17 +1,17 @@
 import AbstractView from './view/abstract-view.js';
 
-/** @enum {string}  */
+/** @enum {string} Перечисление возможных позиций для отрисовки */
 const RenderPosition = {
   BEFOREBEGIN: 'beforebegin',
-  BEFOREEND: 'beforeend',
   AFTERBEGIN: 'afterbegin',
+  BEFOREEND: 'beforeend',
   AFTEREND: 'afterend',
 };
 
 /**
- 
-  @param {string} template 
-  @returns {HTMLElement} 
+ * Функция для создания элемента на основе разметки
+ * @param {string} template Разметка в виде строки
+ * @returns {HTMLElement} Созданный элемент
  */
 function createElement(template) {
   const newElement = document.createElement('div');
@@ -21,9 +21,10 @@ function createElement(template) {
 }
 
 /**
-  @param {AbstractView} component 
-  @param {HTMLElement} container 
-  @param {string} place 
+ * Функция для отрисовки элемента
+ * @param {AbstractView} component Компонент, который должен был отрисован
+ * @param {HTMLElement} container Элемент в котором будет отрисован компонент
+ * @param {string} place Позиция компонента относительно контейнера. По умолчанию - `beforeend`
  */
 function render(component, container, place = RenderPosition.BEFOREEND) {
   if (!(component instanceof AbstractView)) {
@@ -38,8 +39,9 @@ function render(component, container, place = RenderPosition.BEFOREEND) {
 }
 
 /**
-  @param {AbstractView} newComponent 
-  @param {AbstractView} oldComponent 
+ * Функция для замены одного компонента на другой
+ * @param {AbstractView} newComponent Компонент, который нужно показать
+ * @param {AbstractView} oldComponent Компонент, который нужно скрыть
  */
 function replace(newComponent, oldComponent) {
   if (!(newComponent instanceof AbstractView && oldComponent instanceof AbstractView)) {
@@ -59,7 +61,8 @@ function replace(newComponent, oldComponent) {
 }
 
 /**
-  @param {AbstractView} component 
+ * Функция для удаления компонента
+ * @param {AbstractView} component Компонент, который нужно удалить
  */
 function remove(component) {
   if (component === null) {

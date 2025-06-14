@@ -4,7 +4,7 @@ import {
   replace,
   RenderPosition
 } from '../framework/render.js';
-import { sortByType } from '../utils.js';
+import { sortByType } from '../utils/index.js';
 
 import TripInfoView from '../view/trip-info-view.js';
 

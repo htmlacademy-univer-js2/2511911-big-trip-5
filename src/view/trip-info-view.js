@@ -3,7 +3,7 @@ import {
   getRouteLabel,
   getDurationPeriod,
   getTotalPointsCost,
-} from '../utils.js';
+} from '../utils/index.js';
 
 const createTripInfoDummyTemplate = (isLoading) => `
 <section class="trip-main__trip-info  trip-info">

@@ -1,24 +1,8 @@
-import {
-  generateDestination,
-} from '../mock/destinations.js';
-import {
-  generateOffer
-} from '../mock/offers.js';
-import {
-  generatePoint
-} from '../mock/points.js';
-
-import {
-  CITIES,
-  EVENT_TYPES,
-  MocksMaxCount
-} from '../const.js';
-
-import {
-  getRandomPositiveNumber,
-  getRandomArrayElement,
-} from '../utils.js';
-
+import { generateDestination } from '../mock/destinations.js';
+import { generateOffer } from '../mock/offers.js';
+import { generatePoint } from '../mock/points.js';
+import { CITIES, EVENT_TYPES, MocksMaxCount } from '../const.js';
+import { getRandomArrayElement, getRandomPositiveNumber } from '../utils/index.js';
 
 export default class MockService {
   #destinations = [];

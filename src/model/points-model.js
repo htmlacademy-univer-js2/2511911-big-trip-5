@@ -1,6 +1,6 @@
 import { UpdateType } from '../const.js';
 import Observable from '../framework/observable.js';
-import { deleteItem, mapApiDataToPoint, mapPointToApiData, updateItem } from '../utils.js';
+import { deleteItem, mapApiDataToPoint, mapPointToApiData, updateItem } from '../utils/index.js';
 
 export default class PointsModel extends Observable {
   #service = null;

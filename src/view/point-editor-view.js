@@ -3,7 +3,7 @@ import 'flatpickr/dist/flatpickr.min.css';
 
 import AbstractStatefulView from '../framework/view/abstract-stateful-view.js';
 import { EVENT_TYPES, DateFormat, EditType, REQUIRED_POINT_FIELDS } from '../const.js';
-import { toCapitalize, formatDate } from '../utils.js';
+import { toCapitalize, formatDate } from '../utils/index.js';
 
 const createEventTypeTemplate = (types, currentType) =>
   types.reduce(

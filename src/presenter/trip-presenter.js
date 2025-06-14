@@ -6,7 +6,6 @@ import EventCreateView from '../view/event-create-view';
 import EventListView from '../view/event-list-view';
 import EventView from '../view/event-view';
 
-
 export default class TripPresenter {
   eventListComponent = new EventListView();
 
