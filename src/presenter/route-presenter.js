@@ -6,7 +6,7 @@ import EventsListView from '../view/events-list-view.js';
 import EventsListEmptyView from '../view/events-list-empty-view.js';
 import { SORTING_COLUMNS, SortType, UiBlockerLimit, UpdateType, UserAction } from '../const.js';
 import PointPresenter from './point-presenter.js';
-import { filterByType, sortByType } from '../utils.js';
+import { filterByType, sortByType } from '../utils/index.js';
 import SortingView from '../view/sorting-view.js';
 import LoaderView from '../view/loader-view.js';
 import UiBlocker from '../framework/ui-blocker/ui-blocker.js';

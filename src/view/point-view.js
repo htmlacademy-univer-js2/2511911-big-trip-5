@@ -4,7 +4,7 @@ import {
 import {
   calculateDuration,
   formatDate
-} from '../utils.js';
+} from '../utils/index.js';
 import AbstractView from '../framework/view/abstract-view.js';
 
 const createOffersListMarkup = (pointOffers, typeOffers) => pointOffers

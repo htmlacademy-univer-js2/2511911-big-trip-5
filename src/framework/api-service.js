@@ -1,8 +1,10 @@
-
+/**
+ * Класс для отправки запросов к серверу
+ */
 export default class ApiService {
   /**
-    @param {string} endPoint 
-    @param {string} authorization А
+   * @param {string} endPoint Адрес сервера
+   * @param {string} authorization Авторизационный токен
    */
   constructor(endPoint, authorization) {
     this._endPoint = endPoint;
@@ -10,12 +12,13 @@ export default class ApiService {
   }
 
   /**
-    @param {Object} config 
-    @param {string} config.url 
-    @param {string} [config.method] 
-    @param {string} [config.body] 
-    @param {Headers} [config.headers] 
-    @returns {Promise<Response>}
+   * Метод для отправки запроса к серверу
+   * @param {Object} config Объект с настройками
+   * @param {string} config.url Адрес относительно сервера
+   * @param {string} [config.method] Метод запроса
+   * @param {string} [config.body] Тело запроса
+   * @param {Headers} [config.headers] Заголовки запроса
+   * @returns {Promise<Response>}
    */
   async _load({
     url,
@@ -37,17 +40,19 @@ export default class ApiService {
       ApiService.catchError(err);
     }
   }
-  
+
   /**
-    @param {Response} response 
-    @returns {Promise<JSON>}
+   * Метод для обработки ответа
+   * @param {Response} response Объект ответа
+   * @returns {Promise<JSON>}
    */
   static parseResponse(response) {
     return response.json();
   }
 
   /**
-    @param {Response} response 
+   * Метод для проверки ответа
+   * @param {Response} response Объект ответа
    */
   static checkStatus(response) {
     if (!response.ok) {
@@ -56,7 +61,8 @@ export default class ApiService {
   }
 
   /**
-    @param {Error} err 
+   * Метод для обработки ошибок
+   * @param {Error} err Объект ошибки
    */
   static catchError(err) {
     throw err;

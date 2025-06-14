@@ -1,6 +1,6 @@
 import { UpdateType } from '../const.js';
 import Observable from '../framework/observable.js';
-import { deleteItem, updateItem } from '../utils.js';
+import { deleteItem, updateItem } from '../utils/index.js';
 
 export default class OffersModel extends Observable {
   #service = null;

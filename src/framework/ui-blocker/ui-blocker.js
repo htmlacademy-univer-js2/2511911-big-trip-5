@@ -1,29 +1,31 @@
 import './ui-blocker.css';
 
-
+/**
+ * Класс для блокировки интерфейса
+ */
 export default class UiBlocker {
-  /**  @type {number} */
+  /** @type {number} Время до блокировки интерфейса в миллисекундах */
   #lowerLimit;
 
-  /** @type {number} */
+  /** @type {number} Минимальное время блокировки интерфейса в миллисекундах */
   #upperLimit;
 
-  /** @type {HTMLElement|null}  */
+  /** @type {HTMLElement|null} Элемент, блокирующий интерфейс */
   #element;
 
-  /** @type {number}  */
+  /** @type {number} Время вызова метода block */
   #startTime;
 
-  /** @type {number}  */
+  /** @type {number} Время вызова метода unblock */
   #endTime;
 
-  /** @type {number}  */
+  /** @type {number} Идентификатор таймера */
   #timerId;
 
   /**
-    @param {Object} config 
-    @param {number} config.lowerLimit 
-    @param {number} config.upperLimit 
+   * @param {Object} config Объект с настройками блокировщика
+   * @param {number} config.lowerLimit Время до блокировки интерфейса в миллисекундах. Если вызвать метод unblock раньше, то интерфейс заблокирован не будет
+   * @param {number} config.upperLimit Минимальное время блокировки в миллисекундах. Минимальная длительность блокировки
    */
   constructor({lowerLimit, upperLimit}) {
     this.#lowerLimit = lowerLimit;
@@ -34,6 +36,7 @@ export default class UiBlocker {
     document.body.append(this.#element);
   }
 
+  /** Метод для блокировки интерфейса */
   block() {
     this.#startTime = Date.now();
     this.#timerId = setTimeout(() => {
@@ -41,6 +44,7 @@ export default class UiBlocker {
     }, this.#lowerLimit);
   }
 
+  /** Метод для разблокировки интерфейса */
   unblock() {
     this.#endTime = Date.now();
     const duration = this.#endTime - this.#startTime;
@@ -58,10 +62,12 @@ export default class UiBlocker {
     setTimeout(this.#removeClass, this.#upperLimit - duration);
   }
 
+  /** Метод, добавляющий CSS-класс элементу */
   #addClass = () => {
     this.#element.classList.add('ui-blocker--on');
   };
 
+  /** Метод, убирающий CSS-класс с элемента */
   #removeClass = () => {
     this.#element.classList.remove('ui-blocker--on');
   };

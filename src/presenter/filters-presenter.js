@@ -4,7 +4,7 @@ import {
 } from '../framework/render.js';
 import FiltersView from '../view/filters-view.js';
 import { FilterSettings, UpdateType } from '../const.js';
-import { filterByType } from '../utils';
+import { filterByType } from '../utils/index.js';
 
 export default class FiltersPresenter {
   #container = null;

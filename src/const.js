@@ -5,9 +5,9 @@ const HOUR_IN_DAY = 24;
 const MSEC_IN_HOUR = MSEC_IN_SEC * SEC_IN_MIN * MIN_IN_HOUR;
 const MSEC_IN_DAY = MSEC_IN_HOUR * HOUR_IN_DAY;
 
-const COUNT_POINTS = 5;
-const MAX_PRICE = 200;
-const MAX_IMAGES = 5;
+const POINTS_COUNT = 5;
+const MAX_PRICE_VALUE = 200;
+const MAX_IMAGES_COUNT = 5;
 
 const AUTH_TOKEN = 'Basic dXNlckBwYXNzd29yZAo=';
 const API_HOST = 'https://21.objects.htmlacademy.pro/big-trip';
@@ -176,10 +176,10 @@ const DESTINATIONS_NAMES_MAX_COUNT = 3;
 
 
 export {
-  COUNT_POINTS,
+  POINTS_COUNT,
   EVENT_TYPES,
-  MAX_PRICE,
-  MAX_IMAGES,
+  MAX_PRICE_VALUE,
+  MAX_IMAGES_COUNT,
   CITIES,
   DESCRIPTIONS,
   SORTING_COLUMNS,
